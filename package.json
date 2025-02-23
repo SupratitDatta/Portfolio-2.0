@@ -1,0 +1,45 @@
+{
+    "name": "portfolio2",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@studio-freight/lenis": "^1.0.42",
+        "copy-to-clipboard": "^3.3.3",
+        "emailjs-com": "^3.2.0",
+        "framer-motion": "^12.4.4",
+        "lucide-react": "^0.475.0",
+        "next-themes": "^0.4.4",
+        "prop-types": "^15.8.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-router-dom": "^7.1.5",
+        "react-toastify": "^11.0.3",
+        "react-vertical-timeline-component": "^3.5.3",
+        "typed.js": "^2.1.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.19.0",
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/react-vertical-timeline-component": "^3.3.6",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "autoprefixer": "^10.4.20",
+        "eslint": "^9.19.0",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.18",
+        "globals": "^15.14.0",
+        "postcss": "^8.5.2",
+        "tailwindcss": "^3.4.17",
+        "typescript": "~5.7.2",
+        "typescript-eslint": "^8.22.0",
+        "vite": "^6.1.0"
+    }
+}
