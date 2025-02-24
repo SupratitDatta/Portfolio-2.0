@@ -34,6 +34,10 @@ const config = {
                 secondaryHover: "rgb(var(--color-secondary-hover) / <alpha-value>)",
                 textLight: "rgb(var(--color-text-light) / <alpha-value>)",
                 target: "rgb(var(--color-target) / <alpha-value>)"
+            },
+
+            fontFamily: {
+                atkinson: ['Atkinson Hyperlegible Mono', 'sans-serif'],
             }
         },
         screens: {

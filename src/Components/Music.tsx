@@ -6,33 +6,26 @@ const Music: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        if (isPlaying) {
-            const timeout = setTimeout(() => {
-                if (audioRef.current) {
-                    const playPromise = audioRef.current.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            console.error("Auto-play was prevented. Please click the play button to start playback.", error);
-                            setIsPlaying(false);
-                        });
-                    }
+        const timeout = setTimeout(() => {
+            if (audioRef.current) {
+                const playPromise = audioRef.current.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.error("Auto-play was prevented. User interaction required.", error);
+                        setIsPlaying(false);
+                    });
                 }
-            }, 1000);
+            }
+        }, 1000);
 
-            return () => clearTimeout(timeout);
-        }
-    }, [isPlaying]);
-
-    useEffect(() => {
-        localStorage.setItem("isPlaying", isPlaying.toString());
-    }, [isPlaying]);
+        return () => clearTimeout(timeout);
+    }, []);
 
     const toggleMusic = () => {
         if (!audioRef.current) return;
         if (isPlaying) {
             audioRef.current.pause();
-        }
-        else {
+        } else {
             audioRef.current.currentTime = 0;
             audioRef.current.play();
         }
@@ -51,7 +44,7 @@ const Music: React.FC = () => {
                     <Disc3 className="w-8 h-8 sm:w-6 sm:h-6" />
                 )}
             </button>
-            <audio ref={audioRef} src="/tune.mp3" />
+            <audio ref={audioRef} src="/tune.mp3" autoPlay loop />
         </div>
     );
 };

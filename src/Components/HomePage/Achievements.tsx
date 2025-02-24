@@ -31,7 +31,7 @@ const AchievementItem: React.FC<{ achievement: Achievement; index: number }> = (
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="group relative flex items-start w-full max-w-4xl"
+            className="group relative flex items-start w-full max-w-full"
         >
             <MotionDiv
                 className="relative z-10 flex items-center justify-center w-12 h-12"
@@ -41,7 +41,7 @@ const AchievementItem: React.FC<{ achievement: Achievement; index: number }> = (
                 <CheckCircle className="w-8 h-8 text-blue-500 group-hover:text-col bg-dynamic-rev px-1 rounded-full transition-colors duration-300" />
             </MotionDiv>
 
-            <div className="ml-12 sm:ml-6 -mt-1 w-full">
+            <div className="ml-12 sm:ml-3 -mt-1 w-full">
                 <MotionDiv className="flex items-center space-x-2">
                     <span className="text-lg font-semibold text-blue-500 py-1 rounded-full">
                         {achievement.year}
@@ -53,7 +53,7 @@ const AchievementItem: React.FC<{ achievement: Achievement; index: number }> = (
                 <motion.h3 className="text-2xl font-bold text-col-rev group-hover:text-blue-500 transition-colors duration-300">
                     {achievement.title}
                 </motion.h3>
-                <motion.p className="text-gray-600 text-lg leading-[16px] tracking-wide">
+                <motion.p className="text-gray-600 text-lg leading-[16px] sm:leading-[18px] tracking-wide">
                     {achievement.description}
                 </motion.p>
             </div>
@@ -64,7 +64,7 @@ const AchievementItem: React.FC<{ achievement: Achievement; index: number }> = (
 export const Achievements: React.FC = () => {
     return (
         <SectionContainer id="achievements" title="ACHIEVEMENTS & EXPERIENCE">
-            <div className="relative flex flex-col space-y-10 py-12 px-4">
+            <div className="relative flex flex-col space-y-10 py-12 px-4 sm:px-0">
                 <div className="absolute mx-5 sm:mx-4 top-0 w-1 h-full bg-dynamic-rev" />
 
                 {achievements.map((achievement, index) => (

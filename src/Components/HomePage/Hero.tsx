@@ -26,17 +26,10 @@ export const Hero = () => {
 
     const handleDownload = async () => {
         try {
-            const resumeUrl = "https://drive.google.com/uc?export=download&id=1BhecJ4FMefDXkU2zgNHYWTuhgMCr1fTy";
+            const resumeUrl = import.meta.env.VITE_RESUME_URL;
+            window.open(resumeUrl, "_blank");
 
-            const a = document.createElement("a");
-            a.href = resumeUrl;
-            a.download = "Supratit_Datta_Resume.pdf";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(resumeUrl);
-
-            toast.success("Resume downloaded successfully🎉", {
+            toast.success("Resume Opened successfully🎉", {
                 position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -176,7 +169,7 @@ export const Hero = () => {
                             </svg>
                         </button>
                     </div>
-                    <span className="ml-auto text-lg font-mono text-col-rev"> Date: {time.toLocaleString()}</span>
+                    <span className="ml-auto text-lg font-mono text-col-rev sm:text-center"> Date: {time.toLocaleString()}</span>
                 </div></MotionDiv>
         </section >
     );
