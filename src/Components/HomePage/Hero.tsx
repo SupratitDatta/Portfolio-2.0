@@ -16,7 +16,7 @@ export const Hero = () => {
 
     useEffect(() => {
         const typed = new Typed('#typed-text', {
-            strings: ['A Full Stack Developer', 'A Backend Engineer', 'A Designer', 'An API Developer'],
+            strings: ['A Software Developer', 'A Full-Stack Developer', 'A Backend Developer', 'A Designer'],
             typeSpeed: 100,
             backSpeed: 50,
             loop: true,
